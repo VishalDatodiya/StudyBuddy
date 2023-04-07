@@ -20,6 +20,8 @@ class Topic(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['-updated', '-created']
 
 class Room(models.Model):
     # SET_NULL means if we delete the topic then it will still in the room by unknown
